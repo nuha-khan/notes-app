@@ -22,8 +22,9 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-container">
       <Header />
+      <main className="content">
       <AddNote btnClick={handleClick}/>
       {notes.map((noteItem, index) => {
         return (
@@ -36,6 +37,7 @@ function App() {
           />
         );
       })}
+      </main>
       {/* <Note key={1} title="Note title" content="Note content" /> */}
       <Footer />
     </div>
