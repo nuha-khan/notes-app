@@ -24,17 +24,19 @@ header {
   padding: 16px 32px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  text-align: center;
 }
 
 header h1 {
   color: #0984e3;
   font-family: 'Pacifico', cursive;
   font-size: 2rem;
+  word-wrap: break-word;
 }
 
 /* Footer */
 footer {
-  position: absolute;
+  position: relative; /* changed from absolute to relative for mobile */
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -47,6 +49,13 @@ footer p {
 }
 
 /* Notes Grid */
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 .note {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(6px);
@@ -55,7 +64,6 @@ footer p {
   padding: 16px;
   width: 250px;
   margin: 16px;
-  float: left;
   transition: transform 0.2s ease;
 }
 
@@ -96,7 +104,8 @@ footer p {
 /* Note Form */
 form {
   position: relative;
-  width: 480px;
+  width: 100%;
+  max-width: 480px;
   margin: 30px auto 20px auto;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 12px;
@@ -139,4 +148,32 @@ form button {
 form button:hover {
   transform: scale(1.1);
   background: linear-gradient(135deg, #81ecec, #74b9ff);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 12px 16px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .note {
+    width: 90%;
+    margin: 12px 0;
+  }
+
+  form {
+    padding: 16px;
+  }
+
+  form button {
+    right: 12px;
+    bottom: -20px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
 }
