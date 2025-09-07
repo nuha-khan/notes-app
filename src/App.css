@@ -12,15 +12,26 @@ html {
 body {
   background: linear-gradient(to right, #e0eafc, #cfdef3);
   min-height: 100vh;
-  padding: 0 16px;
   color: #2d3436;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* Main content grows to push footer down */
+.content {
+  flex: 1;
+  padding: 0 16px;
 }
 
 /* Header */
 header {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -36,16 +47,13 @@ header h1 {
 
 /* Footer */
 footer {
-  position: relative; /* changed from absolute to relative for mobile */
-  bottom: 0;
   width: 100%;
   text-align: center;
   height: 2.5rem;
-}
-
-footer p {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  line-height: 2.5rem;
   color: #636e72;
-  font-size: 0.9rem;
 }
 
 /* Notes Grid */
@@ -60,6 +68,7 @@ footer p {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(6px);
   border-radius: 12px;
+  float: left;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 16px;
   width: 250px;
